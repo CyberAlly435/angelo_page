@@ -9,9 +9,8 @@
 
     <style>
         body {
-            width: 100%;
+            width: 1368px;
             height: 1368px;
-            min-height: 100vh;
             margin: 0;
 
             background-image: url('elements/images/backgroundimage.jpg');
@@ -19,14 +18,24 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            transform: translateX(-50%);
         }
 
         .container_angeloTitle {
             width: 600px;
             height: 120px;
 
-            background-image: url('elements/images/titleimage.jpg');
-            background-color: rgba(255, 255, 255, 0.25);
+            background-image: url('elements/images/whygif.gif');
+            background-color: rgba(0, 0, 0, 0.25);
+            background-size: cover;
+            background-position-y: 60%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
             border: 0px solid black;
             border-radius: 0px;
 
@@ -61,16 +70,16 @@
         }
 
         .textAnimation_angeloTitle {
-            animation: flashColors 0.1s infinite alternate;
+            animation: flashColors 0.25s infinite alternate;
         }
 
         @keyframes flashColors {
             0% {
-                color: red;
+                color: rgb(200, 0, 0);
             }
 
             100% {
-                color: yellow;
+                color: rgb(200, 200, 0);
             }
         }
     </style>
@@ -99,6 +108,7 @@
             left: 0px;
             top: 0px;
         ">
+            <!-- Meus Projetos -->
             <div style="
             width: 100%;
             height: 200px; 
@@ -117,27 +127,67 @@
                 <h1 class="textAnimation_angeloTitle"
                     style="color: white; padding-left: 20px;">Meus Projetos:
                 </h1>
-                <a href="subpages/asfnaf/index" class="textAnimation_angeloTitle"
+                <a href="subpages/asfnaf/index.html" class="textAnimation_angeloTitle"
                     style="font-size: 20px; padding-left: 40px;">Another Seven's FNaF Fangame: FNaF
                     Amino PT-BR</a><br>
                 <a href="" class="textAnimation_angeloTitle"
                     style="font-size: 20px; padding-left: 40px;">Another Dreams of Seven: Too
                     Close</a>
             </div>
-
             
             <div style="
             width: 100%;
             height: 800px;
             
-            background-color: rgba(0, 0, 0, 1);
+            background-color: rgba(0, 0, 0, 0.5);
             margin: auto auto;
             display: inline-block;
 
             position: absolute;
             left: 0px;
             top: 225px;
+
+            text-align: start;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-weight: lighter;
+            line-height: 20px;
+            "><div style="
+            width: 100%;
+            height: 150px;
+
+            background-image: url(elements/images/whyimage2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-y: 45%;
+            margin: auto auto;
+            display: inline-block;
+
+            position: absolute;
+            left: 0px;
+            top: 0px;
             "></div>
+            <h1 style="padding-top: 150px; text-align: center;">Por que criei este website?</h1>
+            <p style="padding-left: 20px; padding-right: 20px; padding-top: 20px;">
+                O motivo é muito simples: Sempre foi meu sonho ter um site apenas para mim, não importa o domínio. </br></br>
+
+                Claro que não criei o site com apenas esse intuito, eu gosto de mexer com computadores e atualmente HTML é o meu desafio,
+                já que é uma linguagem que não domino, assim como CSS e JavaScript — na qual não estão inclusas neste website.
+                Eu já tentei fazer alguns jogos no Roblox, .Lua não é tão difícil, acostumei muito rápido, o problema é a instabilidade
+                da plataforma Roblox, que me fez me afastar cada vez mais. </br></br>
+                
+                Com todas estas tretas que o Roblox está carregando consigo, fica muito difícil. Mas quem saiba eu não volte?
+            </p><br>
+            <p style="padding-left: 20px; padding-right: 20px; padding-top: 20px;">
+                Optei fazer um site estático, sem nada muito grande por trás. Não quero coisas complexas, apenas algo simples que eu possa me lembrar
+                no futuro, algo que eu possa mostrar a quem eu quiser. </br></br>
+
+                Sobre estética, escolhi algo bem simples também e como gosto do natal, decidi juntar os dois em apenas uma coisa só. </br></br>
+
+                Espero que tenha gostado do meu site, fique a vontade para explorar e conhecer mais sobre os materias que tem por aqui :)
+            </p>
+            </div>
         </div>
 
         <!-- Lado Direito -->
@@ -160,7 +210,7 @@
             <!-- Sobre Mim -->
             <div style="
                 width: 100%;
-                height: 820px;
+                height: 800px;
 
                 background-color: rgba(0, 0, 0, 0.75);
                 border: 0px solid black;
@@ -246,6 +296,24 @@
                         mas isso não quer dizer que não tenho amigos, sonhos e ambições.
                     </p>
                 </div>
+
+                <!-- Fim do Sobre Mim -->
+                <div style="
+                width: 100%;
+                height: 150px;
+
+                background-image: url(elements/images/aboutmegif.gif);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position-y: 35%;
+
+                margin: auto auto;
+                display: inline-block;
+
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                "></div>
             </div>
 
             <!-- Contatos -->
