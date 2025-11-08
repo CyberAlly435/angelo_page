@@ -7,338 +7,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <style>
-        body {
-            width: 1368px;
-            height: 1368px;
-            margin: 0;
+    <script>
+        function mobilePhone() {
+            return window.matchMedia("(pointer:coarse)").matches || navigator.maxTouchPoints > 0;
+        }
 
-            background-image: url('elements/images/backgroundimage.jpg');
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add(mobilePhone() ? "mobile" : "desktop");
+        });
+    </script>
+
+    <style>
+        body.desktop {
+            width: 100%;
+            height: 100%;
+
+            margin: auto auto;
+        
+            background-image: url('elements/desktop-images/background.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
 
             position: absolute;
+            top: 50%;
             left: 50%;
+            bottom: 50%;
             right: 50%;
             transform: translateX(-50%);
+            transform: translateY(-50%);
         }
 
-        .container_angeloTitle {
-            width: 600px;
-            height: 120px;
+        body.mobile {
 
-            background-image: url('elements/images/whygif.gif');
-            background-color: rgba(0, 0, 0, 0.25);
-            background-size: cover;
-            background-position-y: 60%;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-
-            border: 0px solid black;
-            border-radius: 0px;
-
-            margin: auto auto;
-            display: inline-block;
-
-            position: absolute;
-            left: 50%;
-            right: 50%;
-            top: 25px;
-            transform: translateX(-50%);
-
-            text-align: center;
         }
 
-        .container_angeloArguments {
-            width: 1024px;
-            height: 1024px;
-
-            background-color: rgba(255, 255, 255, 0);
-            border: 0px solid black;
-            border-radius: 0px;
-
-            margin: auto auto;
-            display: inline-block;
-
-            position: absolute;
-            left: 50%;
-            right: 50%;
-            top: 215px;
-            transform: translateX(-50%);
-        }
-
-        .textAnimation_angeloTitle {
-            animation: flashColors 0.25s infinite alternate;
-        }
-
-        @keyframes flashColors {
-            0% {
-                color: rgb(200, 0, 0);
-            }
-
-            100% {
-                color: rgb(200, 200, 0);
-            }
-        }
+        .mobile .desktop-only { display: none; }
+        .desktop .mobile-only { display: none; }
     </style>
 </head>
 
 <body>
-    <div class="container_angeloTitle">
-        <h1 class="textAnimation_angeloTitle" style="font-size: 42px; font-family: Arial, Helvetica, sans-serif;">Bem
-            vindo ao meu Website!</h1>
-    </div>
-
-    <div class="container_angeloArguments">
-        <!-- Lado Esquerdo -->
-        <div style="
-            width: 700px;
-            height: 100%;
-            
-            background-color: rgba(255, 255, 255, 0);
-            border: 0px solid black;
-            border-radius: 0px;
-
-            margin: auto auto;
-            display: inline-block;
-
-            position: absolute;
-            left: 0px;
-            top: 0px;
-        ">
-            <!-- Meus Projetos -->
-            <div style="
-            width: 100%;
-            height: 200px; 
-
-            background-color: rgba(0, 0, 0, 0.75);
-            margin: auto auto;
-            display: inline-block;
-
-            position: absolute;
-            left: 0px;
-            top: 0px;
-
-            text-align: start;
-            font-family: Arial, Helvetica, sans-serif;
-        ">
-                <h1 class="textAnimation_angeloTitle"
-                    style="color: white; padding-left: 20px;">Meus Projetos:
-                </h1>
-                <a href="subpages/asfnaf" class="textAnimation_angeloTitle"
-                    style="font-size: 20px; padding-left: 40px;">Another Seven's FNaF Fangame: FNaF
-                    Amino PT-BR</a><br>
-                <a href="" class="textAnimation_angeloTitle"
-                    style="font-size: 20px; padding-left: 40px;">Another Dreams of Seven: Too
-                    Close</a>
-            </div>
-            
-            <div style="
-            width: 100%;
-            height: 800px;
-            
-            background-color: rgba(0, 0, 0, 0.5);
-            margin: auto auto;
-            display: inline-block;
-
-            position: absolute;
-            left: 0px;
-            top: 225px;
-
-            text-align: start;
-            font-size: 18px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-            font-weight: lighter;
-            line-height: 20px;
-            "><div style="
-            width: 100%;
-            height: 150px;
-
-            background-image: url(elements/images/whyimage2.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position-y: 45%;
-            margin: auto auto;
-            display: inline-block;
-
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            "></div>
-            <h1 style="padding-top: 150px; text-align: center;">Por que criei este website?</h1>
-            <p style="padding-left: 20px; padding-right: 20px; padding-top: 20px;">
-                O motivo é muito simples: Sempre foi meu sonho ter um site apenas para mim, não importa o domínio. </br></br>
-
-                Claro que não criei o site com apenas esse intuito, eu gosto de mexer com computadores e atualmente HTML é o meu desafio,
-                já que é uma linguagem que não domino, assim como CSS e JavaScript — na qual não estão inclusas neste website.
-                Eu já tentei fazer alguns jogos no Roblox, .Lua não é tão difícil, acostumei muito rápido, o problema é a instabilidade
-                da plataforma Roblox, que me fez me afastar cada vez mais. </br></br>
-                
-                Com todas estas tretas que o Roblox está carregando consigo, fica muito difícil. Mas quem saiba eu não volte?
-            </p><br>
-            <p style="padding-left: 20px; padding-right: 20px; padding-top: 20px;">
-                Optei fazer um site estático, sem nada muito grande por trás. Não quero coisas complexas, apenas algo simples que eu possa me lembrar
-                no futuro, algo que eu possa mostrar a quem eu quiser. </br></br>
-
-                Sobre estética, escolhi algo bem simples também e como gosto do natal, decidi juntar os dois em apenas uma coisa só. </br></br>
-
-                Espero que tenha gostado do meu site, fique a vontade para explorar e conhecer mais sobre os materias que tem por aqui :)
-            </p>
-            </div>
-        </div>
-
-        <!-- Lado Direito -->
-        <div style="
-            width: 300px;
-            height: 100%;
-
-            background-color: rgba(255, 255, 255, 0);
-            border: 0px solid black;
-            border-radius: 0px;
-
-            margin: auto auto;
-            display: inline-block;
-
-            position: absolute;
-            right: 0px;
-            top: 0px;
-            ">
-
-            <!-- Sobre Mim -->
-            <div style="
-                width: 100%;
-                height: 800px;
-
-                background-color: rgba(0, 0, 0, 0.75);
-                border: 0px solid black;
-                border-radius: 0px;
-
-                margin: auto auto;
-                display: inline-block;
-
-                position: absolute;
-                left: 50%;
-                right: 50%;
-                top: 0px;
-                transform: translateX(-50%);
-                ">
-                <!--Título do Sobre Mim-->
-                <div style="
-                    width: 80%;
-                    height: 75px;
-
-                    background-color: rgba(255, 255, 255, 0);
-                    border: 0px solid black;
-                    border-radius: 0px;
-
-                    margin: auto auto;
-                    display: inline-block;
-
-                    position: absolute;
-                    left: 50%;
-                    right: 50%;
-                    top: 0px;
-                    transform: translateX(-50%);
-
-                    text-align: center;
-                    ">
-                    <h1 class="textAnimation_angeloTitle"
-                        style="font-size: 32px;font-family: Arial, Helvetica, sans-serif;">Sobre Mim</h1>
-                </div>
-
-                <!--Imagem do Sobre Mim-->
-                <div style="
-                    width: 250px;
-                    height: 250px;
-
-                    background-image: url('elements/images/aboutmeimage.jpg');
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    margin: auto auto;
-                    display: inline-block;
-
-                    position: absolute;
-                    left: 50%;
-                    right: 50%;
-                    top: 85px;
-                    transform: translateX(-50%);
-                "></div>
-
-                <!--Mais do Sobre Mim-->
-                <div style="
-                    width: 80%;
-                    height: 300px;
-
-                    background-color: rgba(255, 255, 255, 0);
-                    border: 0px solid black;
-                    border-radius: 0px;
-
-                    margin: auto auto;
-                    display:  inline-block;
-
-                    position: absolute;
-                    left: 50%;
-                    right: 50%;
-                    top: 340px;
-                    transform: translateX(-50%);
-
-                    text-align: start;">
-                    <p
-                        style="font-family: Arial, Helvetica, sans-serif; font-size: 16spx; font-weight: lighter; color: white; padding: 10px;">
-                        Olá! Eu me chamo Ângelo, tenho 16 anos e sou um estudante apaixonado por tecnologia e
-                        programação.
-                        Hoje, vim mostrar a vocês um pouco do meu mundo através do meu novo diário online.<br><br>
-                        Moro em uma cidadezinha no interior, onde a vida é pacata e não saio de casa pela maior parte do
-                        tempo,
-                        mas isso não quer dizer que não tenho amigos, sonhos e ambições.
-                    </p>
-                </div>
-
-                <!-- Fim do Sobre Mim -->
-                <div style="
-                width: 100%;
-                height: 150px;
-
-                background-image: url(elements/images/aboutmegif.gif);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position-y: 35%;
-
-                margin: auto auto;
-                display: inline-block;
-
-                position: absolute;
-                left: 0px;
-                bottom: 0px;
-                "></div>
-            </div>
-
-            <!-- Contatos -->
-            <div style="
-            width: 100%;
-            height: 184px;
-
-            background-color: rgba(0, 0, 0, 0.75);
-            display: inline-block;
-            
-            position: absolute;
-            left: 50%;
-            right: 50%;
-            top: 840px;
-            transform: translateX(-50%);
-
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            ">
-                <h1 class="textAnimation_angeloTitle">Meus Contatos</h1>
-
-                <a href="https://www.instagram.com/s3venn8/" class="textAnimation_angeloTitle">Meu Instagram!</a><br>
-                <p class="textAnimation_angeloTitle">vsangel0@proton.me</p>
-            </div>
-        </div>
+    <div class="desktop-only"></div>
 </body>
 
 </html>
