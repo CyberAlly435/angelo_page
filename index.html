@@ -9,7 +9,10 @@
 
     <script>
         function mobilePhone() {
-            return window.matchMedia("(pointer:coarse)").matches || navigator.maxTouchPoints > 0;
+            const useragent = navigator.userAgent.toLowerCase();
+            const catchPhones = /android|iphone|ipad/.test(useragent);
+
+            return !!catchPhones
         }
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -18,38 +21,374 @@
     </script>
 
     <style>
+        /*#region Desktop*/
         body.desktop {
             width: 100%;
-            height: 100%;
+            height: 1100px;
 
             margin: auto auto;
         
-            background-image: url('elements/desktop-images/background.jpg');
+            background-image: url("elements/desktop-images/background.jpg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            bottom: 50%;
-            right: 50%;
-            transform: translateX(-50%);
-            transform: translateY(-50%);
         }
 
-        body.mobile {
+        /*#region Container de Título: ->*/
+        .angelo_Title.desktop {
+            width: 450px;
+            height: 100px;
 
+            background-image: url("elements/desktop-images/title.gif");
+            background-size: cover;
+            background-position-x: center;
+            background-position-y: 45%;
+            background-repeat: no-repeat;
+            
+            border-style: inset;
+            border-radius: 10px;
+            border-color: rgba(0, 0, 0, 0);
+
+            position: absolute;
+            left: 50%;
+            top: 50px;
+            transform: translateX(-50%);
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .angelo_Title h1 {
+            width: 100vh;
+            margin-top: 25px;
+
+            animation: flashcolors 0.5s steps(1) infinite;
+
+            text-align: center;
+
+            font-size: 36px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /*#endregion*/
+        /*#region Redirecionar a subsites: ->*/
+        .angelo_SubRedirects.desktop {
+            width: 400px;
+            height: 180px;
+
+            background-color: rgba(0, 0, 0, 0.75);
+            border-style: inset;
+            border-radius: 5px;
+            border-color: rgba(0, 0, 0, 0);
+
+            display: inline-block;
+            margin: auto;
+
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translateX(calc(-50% - 160px));
+        }
+
+        .angelo_SubRedirects h1 {
+            padding-top: 10px;
+            padding-left: 20px;
+
+            animation: flashcolors 1s steps(1) infinite;
+
+            font-size: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .angelo_SubRedirects a {
+            padding-left: 35px;
+
+            animation: flashcolors 1s steps(1) infinite;
+
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /*#endregion*/
+        /*#region Solicitar tradução: ->*/
+        .angelo_RequestChangeLanguage.desktop {
+            width: 400px;
+            height: 42px;
+
+            background-color: rgba(0, 0, 0, 0.75);
+            border-style: inset;
+            border-radius: 5px;
+            border-color: rgba(0, 0, 0, 0);
+
+            display: flex;
+            margin: auto;
+
+            position: absolute;
+            top: 380px;
+            left: 50%;
+            transform: translateX(calc(-50% - 160px));
+        }
+
+        .angelo_RequestChangeLanguage a {
+            width: 100vh;
+
+            padding-top: 10.5px;
+            text-align: center;
+
+            animation: flashcolors 2s steps(1) infinite;
+
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /*#endregion*/
+        /*#region Sobre Angelo: ->*/
+        .angelo_aboutme.desktop {
+            width: 280px;
+            height: 800px;
+
+            background-color: rgba(0, 0, 0, 0.75);
+            border-style: inset;
+            border-radius: 5px;
+            border-color: rgba(0, 0, 0, 0);
+
+            display: inline-block;
+            margin: auto;
+
+            text-align: center;
+            
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translateX(calc(-50% + 220px));
+        }
+
+        .angelo_aboutme h1 {
+            animation: flashcolors 1.25s steps(1) infinite;
+
+            text-align: center;
+            font-size: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .angelo_aboutme p {
+            margin-top: 270px;
+            padding-left: 25px;
+            padding-right: 25px;
+            color: white;
+
+            text-align: left;
+
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+        }
+
+        .angelo_aboutme a {
+            display: inline-block;
+            margin-bottom: 0px;
+
+            animation: flashcolors 1s steps(1) infinite;
+
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+        }
+
+        .aboutme_image.angelo_aboutme {
+            width: 225px;
+            height: 225px;
+
+            background-image: url("elements/desktop-images/aboutme.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            border-style: inset;
+            border-radius: 30px;
+            border-color: rgba(0, 0, 0, 0);
+
+            display: inline-block;
+
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .aboutme_header.angelo_aboutme {
+            width: 100%;
+            height: 85px;
+
+            background-image: url("elements/desktop-images/aboutmeheader.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: inline-block;
+
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /*#endregion */
+        /*#region Porque a criação do Site?: ->*/
+        .angelo_whyWebsite.desktop {
+            width: 400px;
+            height: 625px;
+
+            background-color: rgba(0, 0, 0, 0.75);
+            border-style: inset;
+            border-radius: 5px;
+            border-color: rgba(0, 0, 0, 0);
+
+            display: inline-block;
+            margin: auto;
+
+            position: absolute;
+            top: 450px;
+            left: 50%;
+            transform: translateX(calc(-50% - 160px));
+        }
+
+        .angelo_whyWebsite h1 {
+            margin-top: 100px;
+            text-align: center;
+            
+            color: white;
+
+            font-size: 22px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .angelo_whyWebsite p {
+            padding-left: 10px;
+            padding-right: 10px;
+            
+            color: white;
+
+            text-align: left;
+
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 100;
+        }
+
+        .whyHeader.angelo_whyWebsite {
+            width: 400px;
+            height: 75px;
+
+            background-image: url("elements/desktop-images/whyheader.jpg");
+            background-size: cover;
+            background-position-x: center;
+            background-position-y: 45%;
+            background-repeat: no-repeat;
+
+            display: flex;
+            margin: auto;
+
+            position: absolute;
+            left: 50%;
+            top: 0px;
+            transform: translateX(-50%);
+        }
+        /*#endregion*/
+        /*#endregion */
+
+        body.mobile {
+            width: 100%;
+            height: 100%;
+
+            margin: auto auto;
+
+            background-image: url("elements/mobile-images/backgroundimage.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .angeloTitle.mobile {
+            background-color: aliceblue;
         }
 
         .mobile .desktop-only { display: none; }
         .desktop .mobile-only { display: none; }
+    
+        /* KEYFRAMES: -> */
+        @keyframes flashcolors {
+            0% {
+                color: rgba(255, 0, 0, 0.8);
+            }
+            50% {
+                color: rgba(255, 255, 0, 0.8);
+            }
+            100% {
+                color: rgba(255, 0, 0, 0.8);
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="desktop-only"></div>
+    <div class="desktop-only">
+        <div class="angelo_Title desktop">
+            <h1>Ângelo Website</h1>
+        </div>
+
+        <div class="angelo_SubRedirects desktop">
+            <h1>Projetos e outros links</h1>
+
+            <a href="asfnaf/">Another Seven's FNaF Fangame: Amino PT-BR</a>
+            <br>
+            <a href="ados/">Another Dreams Of Seven</a>
+            <br><br>
+            <a href="iAngelo/">iAngelo Blog</a>
+        </div>
+
+        <div class="angelo_RequestChangeLanguage desktop">
+            <a>English</a>
+            <a>日本語</a>
+        </div>
+
+        <div class="angelo_whyWebsite desktop">
+            <div class="whyHeader angelo_whyWebsite"></div>
+
+            <h1>Por que resolvi criar este website?</h1>
+            <p>
+                O motivo é muito simples: Sempre foi meu sonho ter um site apenas para mim, não importa o domínio.<br><br>
+                Claro que não criei o site com apenas esse intuito, eu gosto de mexer com computadores e atualmente HTML é o meu desafio, já que é uma linguagem que não domino, assim como CSS e JavaScript — na qual não estão inclusas neste website. Eu já tentei fazer alguns jogos no Roblox, .Lua não é tão difícil, acostumei muito rápido, o problema é a instabilidade da plataforma Roblox, que me fez me afastar cada vez mais.<br><br>
+                Com todas estas tretas que o Roblox está carregando consigo, fica muito difícil. Mas quem saiba eu não volte?<br><br>
+                Optei fazer um site estático, sem nada muito grande por trás. Não quero coisas complexas, apenas algo simples que eu possa me lembrar no futuro, algo que eu possa mostrar a quem eu quiser.<br><br>
+                Sobre estética, escolhi algo bem simples também e como gosto do natal, decidi juntar os dois em apenas uma coisa só.<br><br>
+                Espero que tenha gostado do meu site, fique a vontade para explorar e conhecer mais sobre os materias que tem por aqui :)<br><br>
+            </p>
+        </div>
+
+        <div class="angelo_aboutme desktop">
+            <div class="aboutme_image angelo_aboutme"></div>
+            <div class="aboutme_header angelo_aboutme"></div>
+            <h1>Sobre mim.</h1>
+            
+            <p>
+                Olá! Eu me chamo Ângelo, tenho 16 anos e sou um estudante apaixonado por tecnologia e
+                programação.
+                Hoje, vim mostrar a vocês um pouco do meu mundo através do meu website.<br><br>
+                Moro em uma cidadezinha no interior, onde a vida é pacata e não saio de casa pela maior parte do
+                tempo,
+                mas isso não quer dizer que não tenho amigos, sonhos e ambições.
+            </p>
+
+            <a href="https://www.instagram.com/s3venn8/">Meu Instagram</a><br>
+            <a href="https://www.gamejolt.com/@Angelo_Seven">Página Gamejolt</a>
+            <br><br>
+            <a>vsangel0@proton.me<a>
+        </div>
+    </div>
+    <div class="mobile-only">
+        <h1>Error 141:</h1>
+        <p>Angelo is maintaining mobile website. You can access desktop version.</p>
+    </div>
 </body>
 
 </html>
